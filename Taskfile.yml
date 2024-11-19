@@ -1,0 +1,30 @@
+version: '3'
+
+env:
+  AWS_REGION: eu-central-1
+  AWS_ACCOUNT: 471112990549
+
+tasks:
+  sts:
+    cmds:
+      - aws sts get-caller-identity
+  ssm:
+    deps:
+      - sts
+    cmds:
+      - cdk deploy warsawjs-120-demo-dev --require-approval never --outputs-file output.json
+  clean:
+    deps:
+      - sts
+    cmds:
+      - cdk destroy --all --force
+  tunnel:
+    deps:
+      - sts
+    cmds:
+      - jq -r '."warsawjs-120-demo-dev".tunnel' output.json | bash
+  connect:
+    deps:
+      - sts
+    cmds:
+      - $(jq -r '."warsawjs-120-demo-dev".connect' output.json)
