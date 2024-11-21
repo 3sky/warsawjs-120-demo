@@ -21,11 +21,11 @@ For simplecity **AWSAdministratorAccess** account is used.
 
 1. Edit `Taskfile.yml` according to your needs.
 
-```yaml
-env:
-  AWS_REGION: user-region
-  AWS_ACCOUNT: user-account-id
-```
+    ```yaml
+    env:
+      AWS_REGION: user-region
+      AWS_ACCOUNT: user-account-id
+    ```
 
 1. Run `task ssm` to build needed elements.
 1. Run `task connect` to login into your EC2 instance.
