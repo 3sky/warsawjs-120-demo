@@ -1,0 +1,6 @@
+{
+  "warsawjs-120-demo-dev": {
+    "connect": "aws ssm start-session --target i-0be3d0a9b27cacf44",
+    "tunnel": "aws ssm start-session --target i-0be3d0a9b27cacf44 --document-name AWS-StartPortForwardingSessionToRemoteHost --parameters '{\"portNumber\":[\"80\"],\"localPortNumber\":[\"8080\"],\"host\":[\"ip-10-192-0-23.eu-central-1.compute.internal\"]}'"
+  }
+}

@@ -4,6 +4,10 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   defaultReleaseBranch: 'main',
   name: 'warsawjs-120-demo',
   projenrcTs: true,
+  eslint: true,
+  eslintOptions: {
+    dirs: ['src', 'test'], // Directories to lint
+  },
 
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */

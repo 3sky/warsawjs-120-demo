@@ -50,5 +50,3 @@ junit.xml
 .cdk.staging/
 .parcel-cache/
 !/.projenrc.ts
-output.json
-cdk.context.json
